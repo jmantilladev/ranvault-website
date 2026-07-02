@@ -45,7 +45,7 @@ export default function WhyRanVault() {
         <SectionHeading
           eyebrow="Why Clinics Choose Us"
           title="Security That Speaks Your Language"
-          subtitle="We're not a generic IT vendor. We're specialists who understand healthcare, and we talk like it."
+          subtitle="We are specialists who understand behavioral health inside and out, and we communicate in plain terms, not technical jargon."
         />
 
         {/* Section image — swap src to change (public/media/why.jpg). */}

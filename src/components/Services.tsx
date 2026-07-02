@@ -58,7 +58,13 @@ export default function Services() {
         <SectionHeading
           align="center"
           eyebrow="What We Do"
-          title="Security Built for Clinics, Not Enterprises"
+          title={
+            <>
+              Security Built for Clinics,
+              <br />
+              Not Enterprises
+            </>
+          }
           subtitle="Everything you need to stay protected and compliant, without hiring an internal security team."
           className="mx-auto"
         />
