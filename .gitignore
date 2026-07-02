@@ -1,0 +1,45 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# next.js / build output
+/.next/
+/out/
+/build
+
+# env files (never commit secrets)
+.env
+.env.*
+!.env.example
+
+# misc
+.DS_Store
+*.pem
+*.tsbuildinfo
+next-env.d.ts
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ---------------------------------------------------------------------------
+# Project-specific excludes
+# ---------------------------------------------------------------------------
+
+# Dev-only throwaway scripts at the project root (keep only the real configs)
+/*.mjs
+!next.config.mjs
+!postcss.config.mjs
+
+# Local dev screenshots (~73 MB of captures — not part of the site)
+/temporary screenshots/
+
+# Source design assets. The deployed copies already live in /public/media,
+# so this folder is redundant for the build and holds a duplicate ~36 MB video
+# plus ~10 MB of source PNGs. Excluded to keep the repo lean.
+/brand_assets/
+
+# Claude Code tooling (skills/config — not part of the website)
+/.claude/
+/.agents/
+/skills-lock.json

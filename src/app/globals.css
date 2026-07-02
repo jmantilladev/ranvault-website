@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   RanVault brand theme — locked palette from docs/brand-guidelines.md
+   Only these four colors are permitted for brand elements.
+--------------------------------------------------------------------------- */
+@theme {
+  --color-healthcare-blue: #10638c;
+  --color-velvet-black: #272727;
+  --color-white-cap: #fafafa;
+  --color-teal-accent: #24bcbc;
+
+  /* DM Sans (loaded via next/font) is the project typeface */
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+
+  /* Spring-style easing for transform/opacity transitions */
+  --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-white-cap);
+    color: var(--color-velvet-black);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Accessible, brand-tinted focus ring for all interactive elements */
+  :focus-visible {
+    outline: 2px solid var(--color-teal-accent);
+    outline-offset: 2px;
+  }
+
+  /* Keep anchored sections clear of the sticky nav when jumped to */
+  [id] {
+    scroll-margin-top: 5.5rem;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Scroll-reveal primitive (see components/Reveal.tsx)
+--------------------------------------------------------------------------- */
+@layer utilities {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 600ms var(--ease-spring),
+      transform 600ms var(--ease-spring);
+    will-change: opacity, transform;
+  }
+
+  [data-reveal][data-visible] {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  /* Seamless logo marquee — track holds two identical halves; -50% loops it.
+     Constant motion → linear (emil). Runs off the main thread via transform. */
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* `reverse` makes the track travel left → right. This decorative logo
+     marquee intentionally keeps animating even under prefers-reduced-motion,
+     per an explicit product decision (pause-on-hover still lets users stop it). */
+  .animate-marquee {
+    animation: marquee 40s linear infinite reverse;
+  }
+
+  /* Hero logo — gentle vertical float (always playing), transform-only. */
+  @keyframes hero-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-hero-float {
+    animation: hero-float 5s ease-in-out infinite;
+  }
+
+  /* Hero logo — soft teal glow pulsing outward behind the mark (peaks at 40%).
+     translate(-50%,-50%) keeps it centered while scale animates. */
+  @keyframes hero-glow-pulse {
+    0% {
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0;
+    }
+    35% {
+      opacity: 0.4;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1.55);
+      opacity: 0;
+    }
+  }
+
+  .animate-hero-glow {
+    animation: hero-glow-pulse 3s ease-out infinite;
+  }
+
+  /* Very slow, small-amplitude float for the hero composition (decorative). */
+  @keyframes floaty {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-9px);
+    }
+  }
+
+  .animate-floaty {
+    animation: floaty 7s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-floaty {
+      animation: none;
+    }
+  }
+}
