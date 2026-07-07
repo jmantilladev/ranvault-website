@@ -90,7 +90,7 @@ export default function HeroLogo() {
             width={800}
             height={800}
             priority
-            className="relative h-auto w-full max-w-[430px] will-change-transform"
+            className="relative h-auto w-full max-w-[475px] will-change-transform"
           />
         </div>
       </div>

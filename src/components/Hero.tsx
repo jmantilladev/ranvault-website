@@ -83,36 +83,36 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-28 lg:py-36">
+      <div className="relative mx-auto max-w-7xl px-5 py-[6.6rem] sm:px-8 sm:py-[7.7rem] lg:py-[9.9rem]">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-12">
           <div className="mx-auto max-w-xl text-center lg:mx-0 lg:text-left">
           {/* Eyebrow */}
           <p className="inline-flex items-center gap-2 rounded-full border border-white-cap/15
-                        bg-white-cap/[0.06] px-3.5 py-1.5 text-xs font-semibold uppercase
+                        bg-white-cap/[0.06] px-4 py-2 text-[0.8rem] font-semibold uppercase
                         tracking-[0.18em] text-white-cap/75 backdrop-blur-sm">
             Cybersecurity for Behavioral Health Clinics
           </p>
 
           {/* Headline — display moment: larger, bolder, tighter than the subhead */}
-          <h1 className="mt-6 text-[2.15rem] font-bold leading-[1.1] tracking-[-0.03em]
-                         text-white-cap sm:text-[2.6rem] lg:text-[2.8rem]">
+          <h1 className="mt-7 text-[2.37rem] font-bold leading-[1.1] tracking-[-0.03em]
+                         text-white-cap sm:text-[2.86rem] lg:text-[3.08rem]">
             Focus on Patients.
             <br />
             We&rsquo;ll Handle Security.
           </h1>
 
           {/* Subheadline — lighter weight/size for clear hierarchy under the headline */}
-          <p className="mx-auto mt-6 max-w-xl text-lg font-normal leading-[1.7] text-white-cap/75 lg:mx-0">
+          <p className="mx-auto mt-7 max-w-xl text-[1.24rem] font-normal leading-[1.7] text-white-cap/75 lg:mx-0">
             HIPAA-compliant protection from data breaches and compliance risk,
             built for clinics, not enterprises.
           </p>
 
           {/* CTAs */}
-          <div className="mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
+          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center rounded-full bg-white-cap px-7 py-3.5
-                         text-base font-semibold text-healthcare-blue
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-white-cap px-8 py-4
+                         text-[1.1rem] font-semibold text-healthcare-blue
                          shadow-[0_16px_40px_-12px_rgba(0,0,0,0.45)]
                          transition-[transform,background-color,color,box-shadow] duration-200
                          ease-[var(--ease-spring)] hover:-translate-y-0.5 hover:bg-teal-accent
@@ -123,8 +123,8 @@ export default function Hero() {
             </a>
             <a
               href="#services"
-              className="group inline-flex items-center justify-center gap-2 rounded-full
-                         border border-white-cap/25 px-6 py-3.5 text-base font-medium text-white-cap
+              className="group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full
+                         border border-white-cap/25 px-7 py-4 text-[1.1rem] font-medium text-white-cap
                          transition-[transform,background-color,border-color] duration-200
                          ease-[var(--ease-spring)] hover:-translate-y-0.5 hover:border-teal-accent/60
                          hover:bg-white-cap/5 active:translate-y-0"
@@ -150,7 +150,7 @@ export default function Hero() {
           </div>
 
           {/* Trust strip */}
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 lg:justify-start">
+          <div className="mt-[3.3rem] flex flex-wrap items-center justify-center gap-x-6 gap-y-3 lg:justify-start">
             {TRUST_SIGNALS.map((signal) => (
               <div key={signal} className="inline-flex items-center gap-2">
                 <ShieldIcon />
