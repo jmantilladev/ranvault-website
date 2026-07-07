@@ -9,6 +9,18 @@ const NAV_LINKS = [
   { label: "Contact Us", href: "#contact" },
 ];
 
+// The five most recognizable credentials, shown as a uniform badge row above the
+// copyright. Each logo sits in an identical light chip (same size / radius /
+// padding) so mismatched logo aspect ratios still read as one deliberate row,
+// and so the dark/black marks (OWASP, MITRE) stay visible on the dark footer.
+const FOOTER_CERTS = [
+  { src: "/certifications/CHPS.png", alt: "CHPS", w: 600, h: 600 },
+  { src: "/certifications/CISSP.png", alt: "CISSP", w: 512, h: 512 },
+  { src: "/certifications/HCISSP.png", alt: "HCISPP", w: 672, h: 352 },
+  { src: "/certifications/Owasp.png", alt: "OWASP", w: 1000, h: 348 },
+  { src: "/certifications/mitre.png", alt: "MITRE ATT&CK", w: 2560, h: 817 },
+];
+
 /**
  * Section 15 — Footer (dark / Velvet Black, white reversed logo).
  *
@@ -91,8 +103,36 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Credential badge row — deliberate, uniform chips above the copyright. */}
+        <div className="mt-14">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white-cap/45">
+            Certified &amp; Credentialed
+          </p>
+          <ul className="mt-5 flex flex-wrap gap-3 sm:gap-4">
+            {FOOTER_CERTS.map((cert) => (
+              <li key={cert.src}>
+                <span
+                  className="group grid h-16 w-[8.75rem] place-items-center rounded-xl bg-white-cap px-4
+                             ring-1 ring-inset ring-black/5
+                             transition-transform duration-200 ease-[var(--ease-spring)] hover:-translate-y-0.5"
+                >
+                  <Image
+                    src={cert.src}
+                    alt={cert.alt}
+                    width={cert.w}
+                    height={cert.h}
+                    className="max-h-8 w-auto object-contain opacity-80 grayscale
+                               transition-[filter,opacity] duration-300 ease-[var(--ease-spring)]
+                               group-hover:opacity-100 group-hover:grayscale-0"
+                  />
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         {/* Bottom bar */}
-        <div className="mt-14 flex flex-col gap-5 border-t border-white-cap/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-5 border-t border-white-cap/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-white-cap/45">
             © 2026 RanVault. All rights reserved.
           </p>

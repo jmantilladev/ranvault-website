@@ -14,22 +14,22 @@ const DIFFERENTIATORS: Differentiator[] = [
   {
     Icon: Target,
     title: "We Only Work With Behavioral Health Clinics",
-    body: "Not hospitals. Not law firms. Not retail. Your clinic's compliance requirements, patient data sensitivities, and operational realities are all we focus on. That depth shows.",
+    body: "Not hospitals. Not law firms. Not retail. Your clinic's HIPAA requirements, 42 CFR Part 2 obligations, and patient data sensitivities are all we focus on. That depth is not something a generalist can replicate.",
   },
   {
     Icon: ClipboardText,
-    title: "You'll Know Exactly Where You Stand",
-    body: "After your free assessment, you get a clear report of your real risk exposure. No vague recommendations, no upsell pressure. Just an honest picture of what is protected and what is not.",
+    title: "Compliance That Holds Up to Scrutiny",
+    body: "When HHS comes knocking, you will be ready. We build your HIPAA and 42 CFR Part 2 documentation to withstand an actual audit, not just to check a box.",
   },
   {
     Icon: Lifebuoy,
     title: "If Something Goes Wrong, We Are Already Ready",
-    body: "Every client gets a custom incident response plan before anything happens. You will never face a breach scrambling to figure out who to call.",
+    body: "Every client gets a custom incident response plan before anything happens. You will never face a breach scrambling to figure out who to call or what to do next.",
   },
   {
     Icon: SealCheck,
-    title: "Compliance That Holds Up to Scrutiny",
-    body: "We build your HIPAA and 42 CFR Part 2 documentation to withstand an actual audit, not just to check a box. When HHS comes knocking, you will be ready.",
+    title: "You Will Always Know Where You Stand",
+    body: "After your free assessment, you receive a clear report of your actual risk exposure. What is protected, what is not, and what to do about it. No guesswork, no surprises.",
   },
 ];
 
@@ -42,11 +42,7 @@ export default function WhyRanVault() {
       style={{ backgroundColor: "rgba(16,99,140,0.035)" }}
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <SectionHeading
-          eyebrow="Why Clinics Choose Us"
-          title="Security That Speaks Your Language"
-          subtitle="We are specialists who understand behavioral health inside and out, and we communicate in plain terms, not technical jargon."
-        />
+        <SectionHeading title="Why Clinics Choose Us" />
 
         {/* Section image — swap src to change (public/media/why.jpg). */}
         <Reveal delay={80} className="mt-10 sm:mt-12">
