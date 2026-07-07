@@ -1,52 +1,58 @@
-import type { SVGProps } from "react";
+import type { Icon as PhosphorIcon } from "@phosphor-icons/react";
+import {
+  SealCheck,
+  Eye,
+  GraduationCap,
+  UserFocus,
+  MagnifyingGlass,
+  Stack,
+  Robot,
+} from "@phosphor-icons/react/dist/ssr";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
-import {
-  IconShieldUser,
-  IconRadar,
-  IconClipboardCheck,
-  IconKey,
-  IconMail,
-  IconLifeBuoy,
-  IconArrowRight,
-} from "@/components/icons";
+import { IconArrowRight } from "@/components/icons";
 
 type Service = {
-  Icon: (p: SVGProps<SVGSVGElement>) => React.ReactElement;
+  Icon: PhosphorIcon;
   title: string;
   body: string;
 };
 
 const SERVICES: Service[] = [
   {
-    Icon: IconShieldUser,
-    title: "vCISO",
-    body: "Executive-level security leadership and strategy, on a fractional basis.",
+    Icon: SealCheck,
+    title: "HIPAA & Compliance Made Simple",
+    body: "We guide you through HIPAA and 42 CFR Part 2 from start to finish. We find your gaps, build the documentation, and get you audit-ready, then keep you compliant as rules change, so you're never scrambling before an inspection.",
   },
   {
-    Icon: IconRadar,
-    title: "24/7 Threat Monitoring (MDR)",
-    body: "Continuous monitoring and response to threats around the clock.",
+    Icon: Eye,
+    title: "Around-the-Clock Threat Monitoring",
+    body: "We watch your systems continuously so threats get caught and stopped before they become breaches. You won't be buried in confusing alerts. When something real happens, we handle it and keep you informed every step of the way.",
   },
   {
-    Icon: IconClipboardCheck,
-    title: "HIPAA & 42 CFR Part 2 Compliance",
-    body: "Audits, documentation, and ongoing compliance support built for behavioral health.",
+    Icon: GraduationCap,
+    title: "Staff Training That Actually Sticks",
+    body: "Most breaches start with one staff member clicking one bad email. We train your team to spot phishing and handle patient data safely, with short, practical sessions built for busy clinic staff, not boring hour-long lectures they'll forget.",
   },
   {
-    Icon: IconKey,
-    title: "Identity & Access Management",
-    body: "Control who can access sensitive systems and patient data.",
+    Icon: UserFocus,
+    title: "Security Leadership Without the Salary",
+    body: "You get an experienced security expert guiding your clinic's protection, without paying for a full-time executive. We set the strategy, handle the hard decisions, and keep your leadership informed in plain language, not tech jargon.",
   },
   {
-    Icon: IconMail,
-    title: "Email Security",
-    body: "Protection against phishing, still the #1 way clinics get breached.",
+    Icon: MagnifyingGlass,
+    title: "Find the Gaps Before Problems Start",
+    body: "We test your defenses safely to find weak spots before they can be used against you. You get a clear report of what needs fixing, ranked by what actually matters, plus hands-on help fixing it.",
   },
   {
-    Icon: IconLifeBuoy,
-    title: "Incident Response Planning",
-    body: "A clear plan ready before something goes wrong, not after.",
+    Icon: Stack,
+    title: "Secure Systems From the Ground Up",
+    body: "Whether your clinic runs on local computers, the cloud, or both, we build your systems with security designed in from the start, not bolted on later. That means controlling who can access patient data and keeping it protected everywhere it lives.",
+  },
+  {
+    Icon: Robot,
+    title: "Safe AI for Your Clinic",
+    body: "More clinics are using AI tools for notes, scheduling, and admin work, but these tools can quietly expose patient data. We help you use AI safely, with clear policies on what's allowed, so you get the benefits without putting patient privacy at risk.",
   },
 ];
 
@@ -69,12 +75,13 @@ export default function Services() {
           className="mx-auto"
         />
 
-        <div className="mt-14 grid gap-6 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 flex flex-wrap justify-center gap-6 sm:mt-16">
           {SERVICES.map(({ Icon, title, body }, i) => (
             <Reveal
               key={title}
               delay={(i % 3) * 70}
-              className="group flex h-full flex-col rounded-2xl border border-velvet-black/[0.06] bg-white p-7
+              className="group flex h-full basis-full flex-col rounded-2xl border border-velvet-black/[0.06] bg-white p-7
+                         sm:basis-[calc(50%_-_0.75rem)] lg:basis-[calc(33.333%_-_1rem)]
                          shadow-[0_1px_2px_rgba(39,39,39,0.04),0_8px_16px_-10px_rgba(16,99,140,0.12),0_22px_46px_-26px_rgba(16,99,140,0.24)]
                          transition-[transform,box-shadow,border-color] duration-300 ease-[var(--ease-spring)]
                          hover:-translate-y-1.5 hover:border-teal-accent/30
