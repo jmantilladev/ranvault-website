@@ -47,17 +47,17 @@ export default function ProblemSection() {
           className="mx-auto"
         />
 
-        {/* Section image — swap src to change (public/media/problem.jpg). */}
+        {/* Section image — swap src to change (public/media/clinic-office.jpg). */}
         <Reveal delay={80} className="mx-auto mt-12 max-w-4xl sm:mt-14">
           <figure className="relative overflow-hidden rounded-2xl border border-velvet-black/[0.06] shadow-[0_2px_4px_rgba(39,39,39,0.04),0_22px_46px_-26px_rgba(16,99,140,0.24)]">
             <Image
-              src="/media/analyst-night.png"
-              alt="A security analyst monitoring three screens at night"
-              width={1447}
-              height={1087}
+              src="/media/clinic-office.jpg"
+              alt="A behavioral health clinic office"
+              width={1536}
+              height={1024}
               className="aspect-[16/7] w-full object-cover"
             />
-            <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-healthcare-blue/[0.17]" />
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-healthcare-blue/10" />
           </figure>
         </Reveal>
 
