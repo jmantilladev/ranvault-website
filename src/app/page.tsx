@@ -5,7 +5,7 @@ import FounderVideo from "@/components/FounderVideo";
 import ProblemSection from "@/components/ProblemSection";
 import Services from "@/components/Services";
 import WhyRanVault from "@/components/WhyRanVault";
-import StatBand from "@/components/StatBand";
+import Certifications from "@/components/Certifications";
 import MidCta from "@/components/MidCta";
 import Faq from "@/components/Faq";
 import FinalCta from "@/components/FinalCta";
@@ -22,7 +22,7 @@ export default function Home() {
         <ProblemSection />
         <Services />
         <WhyRanVault />
-        <StatBand />
+        <Certifications />
         <MidCta />
         <Faq />
         <FinalCta />
