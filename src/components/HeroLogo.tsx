@@ -67,7 +67,7 @@ export default function HeroLogo() {
   }, []);
 
   return (
-    <div ref={rootRef} className="flex justify-center">
+    <div ref={rootRef} className="flex -translate-x-[5px] justify-center">
       {/* Tilt layer (JS-driven; neutral by default) */}
       <div
         ref={tiltRef}
@@ -90,7 +90,7 @@ export default function HeroLogo() {
             width={800}
             height={800}
             priority
-            className="relative h-auto w-full max-w-[475px] will-change-transform"
+            className="relative h-auto w-full max-w-[773px] will-change-transform"
           />
         </div>
       </div>

@@ -141,4 +141,26 @@
       animation: none;
     }
   }
+
+  /* Fast, subtle content swap for the /services tab + accordion panels. */
+  @keyframes service-fade {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-service-fade {
+    animation: service-fade 180ms var(--ease-spring) both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-service-fade {
+      animation: none;
+    }
+  }
 }

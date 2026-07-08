@@ -94,8 +94,8 @@ export default function Hero() {
           </p>
 
           {/* Headline — display moment: larger, bolder, tighter than the subhead */}
-          <h1 className="mt-7 text-[2.37rem] font-bold leading-[1.1] tracking-[-0.03em]
-                         text-white-cap sm:text-[2.86rem] lg:text-[3.08rem]">
+          <h1 className="mt-7 text-[2.68rem] font-bold leading-[1.1] tracking-[-0.03em]
+                         text-white-cap sm:text-[3.17rem] lg:text-[3.39rem]">
             Focus on Patients.
             <br />
             We&rsquo;ll Handle Security.

@@ -2,11 +2,11 @@ import Image from "next/image";
 import { IconShieldCheck } from "@/components/icons";
 
 const NAV_LINKS = [
-  { label: "Home", href: "#" },
-  { label: "Services", href: "#services" },
-  { label: "Why RanVault", href: "#why-ranvault" },
-  { label: "Blog", href: "#blog" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Why RanVault", href: "/#why-ranvault" },
+  { label: "Blog", href: "/#blog" },
+  { label: "Contact Us", href: "/#contact" },
 ];
 
 // The five most recognizable credentials, shown as a uniform badge row above the

@@ -1,39 +1,54 @@
-import type { Icon as PhosphorIcon } from "@phosphor-icons/react";
-import { Target, ClipboardText, Lifebuoy, SealCheck } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 
-type Differentiator = {
-  Icon: PhosphorIcon;
+type Strength = {
+  n: string;
   title: string;
-  body: string;
+  summary: string;
+  /** Row 03 — render the "15+" figure large as the row's focal point. */
+  stat?: string;
+  /** Row 02 — show certification badges in place of a long description. */
+  badges?: boolean;
 };
 
-const DIFFERENTIATORS: Differentiator[] = [
+const STRENGTHS: Strength[] = [
   {
-    Icon: Target,
-    title: "We Only Work With Behavioral Health Clinics",
-    body: "Not hospitals. Not law firms. Not retail. Your clinic's HIPAA requirements, 42 CFR Part 2 obligations, and patient data sensitivities are all we focus on. That depth is not something a generalist can replicate.",
+    n: "01",
+    title: "Behavioral Health Is All We Do",
+    summary:
+      "Not hospitals. Not law firms. Only behavioral health, including the 42 CFR Part 2 rules most IT providers don't even know exist.",
   },
   {
-    Icon: ClipboardText,
-    title: "Compliance That Holds Up to Scrutiny",
-    body: "When HHS comes knocking, you will be ready. We build your HIPAA and 42 CFR Part 2 documentation to withstand an actual audit, not just to check a box.",
+    n: "02",
+    title: "Certified Experts, Not General IT",
+    summary: "Real healthcare security credentials, not general computer techs.",
+    badges: true,
   },
   {
-    Icon: Lifebuoy,
-    title: "If Something Goes Wrong, We Are Already Ready",
-    body: "Every client gets a custom incident response plan before anything happens. You will never face a breach scrambling to figure out who to call or what to do next.",
+    n: "03",
+    title: "Years Protecting Healthcare Data",
+    summary: "Hands-on experience defending healthcare against real threats.",
+    stat: "15+",
   },
   {
-    Icon: SealCheck,
-    title: "You Will Always Know Where You Stand",
-    body: "After your free assessment, you receive a clear report of your actual risk exposure. What is protected, what is not, and what to do about it. No guesswork, no surprises.",
+    n: "04",
+    title: "You Talk to an Expert, Not a Ticket Queue",
+    summary: "Reach a senior security professional directly. No call centers, no queues.",
   },
 ];
 
-/** Section 10 — Why RanVault ("Security That Speaks Your Language"). */
+const BADGES = [
+  { src: "/certifications/CHPS.png", alt: "CHPS certification", w: 600, h: 600 },
+  { src: "/certifications/CISSP.png", alt: "CISSP certification", w: 512, h: 512 },
+  { src: "/certifications/HCISSP.png", alt: "HCISPP certification", w: 672, h: 352 },
+];
+
+/**
+ * Section 10 — Why RanVault. Numbered, left-aligned editorial list: large
+ * teal-outline numerals set the rhythm while each row mixes content types
+ * (text, credential badges, a headline stat) to read as a designed spread.
+ */
 export default function WhyRanVault() {
   return (
     <section
@@ -44,44 +59,86 @@ export default function WhyRanVault() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading title="Why Clinics Choose Us" />
 
-        {/* Section image — swap src to change (public/media/why.jpg). */}
-        <Reveal delay={80} className="mt-10 sm:mt-12">
-          <figure className="relative overflow-hidden rounded-2xl border border-velvet-black/[0.06] shadow-[0_2px_4px_rgba(39,39,39,0.04),0_22px_46px_-26px_rgba(16,99,140,0.24)]">
-            <Image
-              src="/media/security-team.png"
-              alt="Two security professionals working at monitors"
-              width={1448}
-              height={1086}
-              className="aspect-[16/6] w-full object-cover"
-            />
-            <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-healthcare-blue/[0.17]" />
-          </figure>
-        </Reveal>
-
-        <div className="mt-12 grid gap-x-8 gap-y-9 sm:mt-14 sm:grid-cols-2">
-          {DIFFERENTIATORS.map(({ Icon, title, body }, i) => (
-            <Reveal
-              key={title}
-              delay={(i % 2) * 70}
-              className="group flex gap-5"
-            >
+        <div className="mt-12 grid gap-10 sm:mt-16 lg:grid-cols-[1fr_30rem] lg:items-center lg:gap-16">
+          <ul className="space-y-12 sm:space-y-16">
+          {STRENGTHS.map(({ n, title, summary, stat, badges }, i) => (
+            <Reveal as="li" key={n} delay={i * 80} className="flex gap-5 sm:gap-8">
               <span
-                className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-gradient-to-br
-                           from-healthcare-blue/[0.07] to-teal-accent/[0.12] text-teal-accent
-                           ring-1 ring-inset ring-teal-accent/15 shadow-[0_6px_16px_-6px_rgba(36,188,188,0.30)]
-                           transition-[transform,box-shadow] duration-300 ease-[var(--ease-spring)]
-                           group-hover:-translate-y-0.5 group-hover:shadow-[0_10px_22px_-8px_rgba(36,188,188,0.42)]"
+                aria-hidden="true"
+                className="shrink-0 select-none text-[2.75rem] font-bold leading-none tabular-nums
+                           text-transparent [-webkit-text-stroke:1.5px_rgba(36,188,188,0.55)] sm:text-[3.5rem]"
               >
-                <Icon className="h-6 w-6" />
+                {n}
               </span>
-              <div>
-                <h3 className="text-lg font-semibold tracking-[-0.01em] text-velvet-black">
-                  {title}
-                </h3>
-                <p className="mt-2 text-[15px] leading-[1.65] text-velvet-black/65">{body}</p>
+
+              <div className="pt-1 sm:pt-1.5">
+                {stat ? (
+                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                    <span className="text-[2.5rem] font-bold leading-none tracking-[-0.02em] text-healthcare-blue sm:text-[3rem]">
+                      {stat}
+                    </span>
+                    <h3 className="text-lg font-semibold tracking-[-0.01em] text-velvet-black sm:text-xl">
+                      {title}
+                    </h3>
+                  </div>
+                ) : (
+                  <h3 className="text-lg font-semibold tracking-[-0.01em] text-velvet-black sm:text-xl">
+                    {title}
+                  </h3>
+                )}
+
+                <p className="mt-2 max-w-xl text-[14px] leading-[1.6] text-velvet-black/65 sm:text-[15px]">
+                  {summary}
+                </p>
+
+                {badges && (
+                  <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3">
+                    {BADGES.map((b) => (
+                      <Image
+                        key={b.src}
+                        src={b.src}
+                        alt={b.alt}
+                        width={b.w}
+                        height={b.h}
+                        className="h-11 w-auto object-contain"
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
             </Reveal>
           ))}
+          </ul>
+
+          {/* Right column — brand imagery balancing the four strengths */}
+          <div className="flex flex-col gap-5">
+            <Reveal>
+              <figure className="relative overflow-hidden rounded-2xl border border-velvet-black/[0.06] shadow-[0_2px_4px_rgba(39,39,39,0.04),0_22px_46px_-26px_rgba(16,99,140,0.24)]">
+                <Image
+                  src="/media/partners_pic.png"
+                  alt="RanVault's two founders in the RanVault office"
+                  width={1000}
+                  height={700}
+                  className="h-auto w-full object-cover"
+                />
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 bg-healthcare-blue/[0.08]"
+                />
+              </figure>
+            </Reveal>
+            <Reveal delay={90}>
+              <figure className="relative overflow-hidden rounded-2xl border border-velvet-black/[0.06] shadow-[0_2px_4px_rgba(39,39,39,0.04),0_22px_46px_-26px_rgba(16,99,140,0.24)]">
+                <Image
+                  src="/media/logo-circuit.png"
+                  alt="The RanVault security mark glowing on a circuit board"
+                  width={1448}
+                  height={1086}
+                  className="aspect-[16/9] w-full object-cover"
+                />
+              </figure>
+            </Reveal>
+          </div>
         </div>
       </div>
     </section>

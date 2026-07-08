@@ -10,7 +10,7 @@ import SectionHeading from "@/components/SectionHeading";
  * Intrinsic width/height are the real PNG dimensions so Next.js keeps aspect
  * ratios correct while `h-20 w-auto` pins the display height.
  */
-type Cert = { src: string; alt: string; w: number; h: number };
+type Cert = { src: string; alt: string; w: number; h: number; big?: boolean };
 
 // Split into two explicit rows so the display always reads as a clean 2-row grid
 // on desktop. Row 1 holds the compact badges; row 2 carries the wider wordmark
@@ -29,7 +29,7 @@ const ROW_2: Cert[] = [
   { src: "/certifications/Owasp.png", alt: "OWASP", w: 1000, h: 348 },
   { src: "/certifications/mitre.png", alt: "MITRE ATT&CK", w: 2560, h: 817 },
   { src: "/certifications/The-HIPAA-Journal-Logo-1-scaled.png", alt: "The HIPAA Journal", w: 2560, h: 780 },
-  { src: "/certifications/CCNA.png", alt: "CCNA — Cisco Certified Network Associate", w: 352, h: 352 },
+  { src: "/certifications/CCNA.png", alt: "CCNA — Cisco Certified Network Associate", w: 352, h: 352, big: true },
 ];
 
 export default function Certifications() {
@@ -61,8 +61,10 @@ export default function Certifications() {
                     alt={cert.alt}
                     width={cert.w}
                     height={cert.h}
-                    className="h-16 w-auto object-contain transition-transform duration-300
-                               ease-[var(--ease-spring)] hover:scale-105 sm:h-20"
+                    className={`w-auto object-contain transition-transform duration-300
+                               ease-[var(--ease-spring)] hover:scale-105 ${
+                                 cert.big ? "h-[4.6rem] sm:h-[5.75rem]" : "h-16 sm:h-20"
+                               }`}
                   />
                 </li>
               ))}

@@ -4,11 +4,11 @@ import { useState } from "react";
 import Image from "next/image";
 
 const NAV_LINKS = [
-  { label: "Home", href: "#" },
-  { label: "Services", href: "#services" },
-  { label: "Why RanVault", href: "#why-ranvault" },
-  { label: "Blog", href: "#blog" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Why RanVault", href: "/#why-ranvault" },
+  { label: "Blog", href: "/#blog" },
+  { label: "Contact Us", href: "/#contact" },
 ];
 
 /**
@@ -19,7 +19,7 @@ const NAV_LINKS = [
 function Logo() {
   return (
     <a
-      href="#"
+      href="/"
       aria-label="RanVault home"
       className="inline-flex items-center transition-opacity duration-200
                  ease-[var(--ease-spring)] hover:opacity-80 focus-visible:opacity-80"
@@ -73,7 +73,7 @@ export default function Navbar() {
 
           {/* Desktop CTA — distinct weight from nav links */}
           <a
-            href="#contact"
+            href="/#contact"
             className="hidden items-center rounded-full bg-healthcare-blue px-5 py-2.5 text-sm
                        font-semibold text-white-cap shadow-[0_8px_20px_-8px_rgba(16,99,140,0.6)]
                        transition-[transform,background-color,box-shadow] duration-200 ease-[var(--ease-spring)]
@@ -139,7 +139,7 @@ export default function Navbar() {
               ))}
               <li className="mt-2">
                 <a
-                  href="#contact"
+                  href="/#contact"
                   onClick={() => setOpen(false)}
                   className="block rounded-full bg-healthcare-blue px-5 py-3 text-center text-sm
                              font-semibold text-white-cap transition-colors duration-200
