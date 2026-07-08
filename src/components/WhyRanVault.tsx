@@ -92,16 +92,17 @@ export default function WhyRanVault() {
                 </p>
 
                 {badges && (
-                  <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3">
+                  <div className="mt-4 flex flex-wrap gap-4">
                     {BADGES.map((b) => (
-                      <Image
-                        key={b.src}
-                        src={b.src}
-                        alt={b.alt}
-                        width={b.w}
-                        height={b.h}
-                        className="h-11 w-auto object-contain"
-                      />
+                      <div key={b.src} className="flex h-14 w-24 items-center justify-center">
+                        <Image
+                          src={b.src}
+                          alt={b.alt}
+                          width={b.w}
+                          height={b.h}
+                          className="max-h-11 max-w-full object-contain"
+                        />
+                      </div>
                     ))}
                   </div>
                 )}

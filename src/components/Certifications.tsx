@@ -52,18 +52,21 @@ export default function Certifications() {
               as="ul"
               key={ri}
               delay={140 + ri * 90}
-              className="flex flex-wrap items-center justify-center gap-x-10 gap-y-10 sm:gap-x-12 lg:gap-x-16"
+              className="flex flex-wrap justify-center gap-x-6 gap-y-8 sm:gap-x-10"
             >
               {row.map((cert) => (
-                <li key={cert.src} className="shrink-0">
+                <li
+                  key={cert.src}
+                  className="flex h-20 w-24 items-center justify-center sm:h-24 sm:w-36"
+                >
                   <Image
                     src={cert.src}
                     alt={cert.alt}
                     width={cert.w}
                     height={cert.h}
-                    className={`w-auto object-contain transition-transform duration-300
+                    className={`max-w-full object-contain transition-transform duration-300
                                ease-[var(--ease-spring)] hover:scale-105 ${
-                                 cert.big ? "h-[4.6rem] sm:h-[5.75rem]" : "h-16 sm:h-20"
+                                 cert.big ? "max-h-[4.6rem] sm:max-h-[5.75rem]" : "max-h-16 sm:max-h-20"
                                }`}
                   />
                 </li>

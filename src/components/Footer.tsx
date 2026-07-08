@@ -44,8 +44,11 @@ export default function Footer() {
               className="h-9 w-auto"
             />
             <p className="mt-5 text-[15px] leading-[1.7] text-white-cap/60">
-              Healthcare Secured. Always Assured. Cybersecurity built for behavioral health
-              clinics, not enterprises.
+              <span className="font-semibold text-white-cap/85">
+                Healthcare Secured. Always Assured.
+              </span>
+              <br />
+              Cybersecurity built for behavioral health clinics, not enterprises.
             </p>
             <div className="mt-6 flex gap-3">
               {/* PLACEHOLDER social links — replace hrefs with real profiles. */}
@@ -85,10 +88,10 @@ export default function Footer() {
             <ul className="mt-4 space-y-3 text-[15px] text-white-cap/70">
               <li>
                 <a
-                  href="mailto:jorge@ranvault.com"
+                  href="mailto:info@ranvault.com"
                   className="transition-colors duration-200 ease-[var(--ease-spring)] hover:text-teal-accent"
                 >
-                  jorge@ranvault.com
+                  info@ranvault.com
                 </a>
               </li>
               <li>
@@ -98,6 +101,9 @@ export default function Footer() {
                 >
                   (512) 201-5316
                 </a>
+              </li>
+              <li className="leading-[1.5] text-white-cap/70">
+                5900 Balcones Drive, Ste 100, Austin, TX 78731
               </li>
             </ul>
           </div>
@@ -133,9 +139,22 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col gap-5 border-t border-white-cap/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm text-white-cap/45">
-            © 2026 RanVault. All rights reserved.
-          </p>
+          <div className="flex flex-col gap-x-4 gap-y-2 text-sm text-white-cap/45 sm:flex-row sm:items-center">
+            <p>© 2026 RanVault. All rights reserved.</p>
+            <span aria-hidden="true" className="hidden text-white-cap/25 sm:inline">·</span>
+            <a
+              href="/privacy"
+              className="transition-colors duration-200 ease-[var(--ease-spring)] hover:text-teal-accent"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="/terms"
+              className="transition-colors duration-200 ease-[var(--ease-spring)] hover:text-teal-accent"
+            >
+              Terms of Service
+            </a>
+          </div>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
             {["HIPAA", "42 CFR Part 2"].map((badge) => (
               <span key={badge} className="inline-flex items-center gap-1.5 text-sm text-white-cap/55">
