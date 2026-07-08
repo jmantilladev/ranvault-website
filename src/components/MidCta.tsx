@@ -23,7 +23,7 @@ export default function MidCta() {
           Ready to Protect Your Clinic?
         </Reveal>
         <Reveal as="p" delay={70} className="mt-4 text-lg leading-[1.7] text-white-cap/80">
-          Get a free security assessment. No obligation, no jargon.
+          Thirty minutes, no sales pitch, just an honest look at where your clinic stands.
         </Reveal>
         <Reveal delay={130} className="mt-9">
           <a

@@ -59,7 +59,7 @@ export default function SectionHeading({
           as="p"
           delay={eyebrow ? 130 : 80}
           className={cx(
-            "mt-5 text-lg font-normal leading-[1.7]",
+            "mt-5 text-balance text-lg font-normal leading-[1.7]",
             invert ? "text-white-cap/75" : "text-velvet-black/60",
           )}
         >

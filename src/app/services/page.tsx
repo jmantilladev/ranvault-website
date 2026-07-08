@@ -66,7 +66,7 @@ export default function ServicesPage() {
             <Reveal
               as="p"
               delay={130}
-              className="mx-auto mt-5 max-w-2xl text-lg leading-[1.7] text-white-cap/80"
+              className="mx-auto mt-5 max-w-xl text-balance text-lg leading-[1.7] text-white-cap/80"
             >
               You didn&rsquo;t get into behavioral health to become a cybersecurity expert.
               That&rsquo;s our job.
@@ -173,7 +173,7 @@ export default function ServicesPage() {
               Let&rsquo;s Find Out What Your Clinic Needs
             </Reveal>
             <Reveal as="p" delay={70} className="mt-4 text-lg leading-[1.7] text-white-cap/80">
-              Book a free security assessment. No obligation, no pressure, no jargon.
+              Thirty minutes, no sales pitch, just an honest look at where your clinic stands.
             </Reveal>
             <Reveal delay={130} className="mt-9">
               <Link

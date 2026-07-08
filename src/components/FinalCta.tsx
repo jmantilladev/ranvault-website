@@ -46,7 +46,7 @@ export default function FinalCta() {
             Let&rsquo;s Secure Your Clinic
           </Reveal>
           <Reveal as="p" delay={70} className="mt-4 text-lg leading-[1.7] text-white-cap/80">
-            Book a free assessment. It takes less than 30 minutes.
+            Thirty minutes, no sales pitch, just an honest look at where your clinic stands.
           </Reveal>
           <Reveal delay={130} className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
             {["HIPAA", "42 CFR Part 2"].map((s) => (

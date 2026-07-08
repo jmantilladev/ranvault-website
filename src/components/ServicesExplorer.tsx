@@ -72,13 +72,13 @@ export default function ServicesExplorer() {
   return (
     <div>
       {/* DESKTOP — sticky vertical tablist + detail panel */}
-      <div className="hidden lg:grid lg:grid-cols-[34%_1fr] lg:items-start lg:gap-14">
+      <div className="hidden lg:grid lg:grid-cols-[34%_1fr] lg:items-start">
         <div
           role="tablist"
           aria-orientation="vertical"
           aria-label="Services"
           onKeyDown={onTabsKeyDown}
-          className="sticky top-28 flex flex-col"
+          className="sticky top-28 flex flex-col lg:pr-10"
         >
           {SERVICES.map(({ slug, Icon, title }, i) => {
             const selected = active === i;
@@ -121,7 +121,7 @@ export default function ServicesExplorer() {
           id={`panel-${SERVICES[active].slug}`}
           aria-labelledby={`tab-${SERVICES[active].slug}`}
           tabIndex={0}
-          className="focus-visible:outline-none"
+          className="border-velvet-black/[0.08] focus-visible:outline-none lg:border-l lg:pl-12"
         >
           <div key={active} className="animate-service-fade">
             <ServiceDetail service={SERVICES[active]} />
