@@ -1,8 +1,6 @@
 import HeroLogo from "@/components/HeroLogo";
 import HeroPatternSpotlight from "@/components/HeroPatternSpotlight";
 
-const TRUST_SIGNALS = ["HIPAA", "42 CFR Part 2"];
-
 /** Small shield-check glyph used in the trust strip. */
 function ShieldIcon() {
   return (
@@ -108,7 +106,7 @@ export default function Hero() {
           </p>
 
           {/* CTAs */}
-          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start">
+          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
             <a
               href="#contact"
               className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-white-cap px-8 py-4
@@ -149,16 +147,14 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Trust strip */}
-          <div className="mt-[3.3rem] flex flex-wrap items-center justify-center gap-x-6 gap-y-3 lg:justify-start">
-            {TRUST_SIGNALS.map((signal) => (
-              <div key={signal} className="inline-flex items-center gap-2">
-                <ShieldIcon />
-                <span className="text-sm font-medium tracking-wide text-white-cap/85">
-                  {signal}
-                </span>
-              </div>
-            ))}
+          {/* Trust line */}
+          <div className="mt-[3.3rem] flex items-start justify-center gap-2 text-left lg:justify-start">
+            <span className="mt-0.5 shrink-0">
+              <ShieldIcon />
+            </span>
+            <span className="max-w-md text-sm font-medium leading-[1.5] text-white-cap/85">
+              Compliant with HIPAA and 42 CFR Part 2, the privacy rules built for behavioral health.
+            </span>
           </div>
         </div>
 
